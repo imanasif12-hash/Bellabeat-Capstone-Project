@@ -1,0 +1,92 @@
+--Check the data for null values.
+
+SELECT COUNT(*) - COUNT(Id) Id,
+COUNT(*) -COUNT(ActivityDate) ActivityDate,
+COUNT(*) -COUNT(TotalDistance) TotalDistance,
+COUNT(*) -COUNT(TrackerDistance) TrackerDistance,
+COUNT(*) -COUNT(LoggedActivitiesDistance) LoggedActivitiesDistance,
+COUNT(*) -COUNT(VeryActiveDistance) VeryActiveDistance,
+COUNT(*) -COUNT(ModeratelyActiveDistance) ModeratelyActiveDistance,
+COUNT(*) -COUNT(LightActiveDistance) LightActiveDistance,
+COUNT(*) -COUNT(SedentaryActiveDistance) SedentaryActiveDistance,
+COUNT(*) - COUNT(VeryActiveDistance) VeryActiveDistance,
+COUNT(*) - COUNT(FairlyActiveMinutes) FairlyActiveMinutes,
+COUNT(*) - COUNT(LightlyActiveMinutes) LightlyActiveMinutes,
+COUNT(*) - COUNT(SedentaryMinutes) SedentaryMinutes,
+COUNT(*) - COUNT(Calories) Calories
+FROM `upheld-producer-472721-k3.daily_activity.combined`; -- No null values so move to next step.
+
+
+--Explore each colum of the dataset starting from the left to right side.
+
+
+-- 1. Check the Id column to ensure it is uniform. It should have 10 charecters.
+
+SELECT
+ LENGTH(CAST(Id AS STRING)) AS Id_length
+FROM `upheld-producer-472721-k3.daily_activity.combined`
+GROUP BY LENGTH(CAST(Id AS STRING));
+
+
+-- 2. Check the ActivityDate column for correct date formatting.
+
+SELECT ActivityDate
+FROM `upheld-producer-472721-k3.daily_activity.combined`
+WHERE SAFE_CAST(ActivityDate AS DATE) IS NULL;
+
+
+-- 3. Check for correct numbers in TotalSteps column.
+
+SELECT
+ MIN(TotalSteps) AS min_steps,
+ MAX(TotalSteps) AS max_steps
+FROM`upheld-producer-472721-k3.daily_activity.combined`;
+
+
+-- 4. Check for the correct numbers in the rest of the columns as well from TotalDistance to Calories.
+
+SELECT
+ MIN(TotalDistance) AS min_distance,
+ MAX(TotalDistance) AS max_distance,
+ MIN(TrackerDistance) AS min_trackerdistance,
+ MAX(TrackerDistance) AS max_trackerdistance,
+
+
+ MIN(LoggedActivitiesDistance) AS min_loggedactivitiesdistance,
+ MAX(LoggedActivitiesDistance) AS max_loggedactivitiesdistance,
+
+
+ MIN(VeryActiveDistance) AS min_veryactivedistance,
+ MAX(VeryActiveDistance) AS max_veryactivedistance,
+
+
+ MIN(ModeratelyActiveDistance) AS min_moderatelyactiveDistance,
+ MAX(ModeratelyActiveDistance) AS max_moderatelyactivedistance,
+
+
+ MIN(LightActiveDistance) AS min_lightactivedistance,
+ MAX(LightActiveDistance) AS max_lightactivedistance,
+ MIN(SedentaryActiveDistance) AS min_sedentaryactivedistance,
+ MAX(SedentaryActiveDistance) AS max_sedentaryactivedistance,
+
+
+ MIN(VeryActiveMinutes) AS min_VeryActiveMinutes,
+ MAX(VeryActiveMinutes) AS max_VeryActiveMinutes,
+
+
+ MIN(FairlyActiveMinutes) AS min_FairlyActiveMinutes,
+ MAX(FairlyActiveMinutes) AS max_FairlyActiveMinutes,
+ MIN(LightlyActiveMinutes) AS min_LightlyActiveMinutes,
+ MAX(LightlyActiveMinutes) AS max_LightlyActiveMinutes,
+
+
+ MIN(SedentaryMinutes) AS min_SedentaryMinutes,
+ MAX(SedentaryMinutes) AS max_SedentaryMinutes,
+
+
+ MIN(Calories) AS min_Calories,
+ MAX(Calories) AS max_Calories,
+FROM`upheld-producer-472721-k3.daily_activity.combined`;
+
+
+-- End query
