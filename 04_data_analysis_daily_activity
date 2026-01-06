@@ -1,0 +1,54 @@
+-- Find average of steps amongst users.
+
+ SELECT AVG(total_steps) AS average_totalsteps
+FROM`upheld-producer-472721-k3.daily_activity.combined_cleaned`; -- The avg_totalsteps were 7280.89.
+
+
+-- Find out how active users are from most to least.
+
+WITH TOTAL AS (
+ SELECT
+   SUM(very_act_min) AS very_act_min_sum,
+   SUM(fairly_act_min) AS fairly_act_min_sum,
+   SUM(lightly_act_min) AS lightly_act_min_sum,
+   SUM(sed_min) AS sed_min_sum
+ FROM `upheld-producer-472721-k3.daily_activity.combined_cleaned`
+)
+
+
+SELECT activity_type, total_minutes
+FROM TOTAL
+UNPIVOT (
+ total_minutes FOR activity_type IN (
+   very_act_min_sum AS 'very_active',
+   fairly_act_min_sum AS 'fairly_active',
+   lightly_act_min_sum AS 'lightly_active',
+   sed_min_sum AS 'sedentary'
+ )
+)
+ORDER BY total_minutes DESC; -- Most users were sedentary while least were fairly_active.
+
+
+-- Which days of the week users are getting the most total_steps.
+
+SELECT
+ day_of_week,
+ AVG(total_steps) AS avg_steps
+FROM `upheld-producer-472721-k3.daily_activity.combined_cleaned`
+GROUP BY day_of_week
+ORDER BY avg_steps DESC; --Saturday.
+
+
+-- Which days of the week users are most to least active.
+
+SELECT
+ day_of_week,
+ SUM(very_act_min) AS very_act_min,
+ SUM(fairly_act_min) AS fairly_act_min,
+ SUM(lightly_act_min) AS lightly_act_min
+FROM `upheld-producer-472721-k3.daily_activity.combined_cleaned`
+GROUP BY day_of_week
+ORDER BY very_act_min DESC; -- When looking at the very_act_min, Tuesday is when people were the most active and Sunday was the least.
+
+
+--End query.
