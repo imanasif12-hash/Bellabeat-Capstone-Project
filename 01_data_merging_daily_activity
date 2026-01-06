@@ -1,0 +1,8 @@
+-- Merge together daily_activity_0304 and daily_activity_0405 datasets.
+
+CREATE TABLE `upheld-producer-472721-k3.daily_activity.combined` AS
+SELECT * FROM `upheld-producer-472721-k3.bellabeat_project.daily_activity_0304`
+UNION ALL
+SELECT * FROM `upheld-producer-472721-k3.bellabeat_project.daily_activity_0405`;
+
+
