@@ -1,0 +1,23 @@
+-- Create a new table to rename all the nulls.
+
+CREATE TABLE
+`upheld-producer-472721-k3.daily_activity.combined_cleaned` AS
+SELECT
+ Id AS user_id,
+ TotalSteps AS total_steps,
+ ActivityDate AS act_date,
+ ROUND (TotalDistance, 2) AS total_distance, -- round to 2 decimal places.
+ ROUND (VeryActiveDistance, 2) AS very_act_dist, -- round to 2 decimal places.
+ ROUND (ModeratelyActiveDistance, 2) AS moderate_act_dist, -- round to 2 decimal places.
+ ROUND (LightActiveDistance, 2) AS light_act_dist, -- round to 2 decimal places.
+ ROUND (SedentaryActiveDistance, 2) AS sed_act_dist, -- round to 2 decimal places.
+ VeryActiveMinutes AS very_act_min,
+ FairlyActiveMinutes AS fairly_act_min,
+ LightlyActiveMinutes AS lightly_act_min,
+ SedentaryMinutes AS sed_min,
+ Calories AS total_calories,
+  FORMAT_DATE('%A', ActivityDate) AS day_of_week
+FROM `upheld-producer-472721-k3.daily_activity.combined`;
+
+
+-- End query.
