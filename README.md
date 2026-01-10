@@ -90,7 +90,7 @@ I [cleaned this dataset in SQL](03_data_cleaning_daily_activity) and made a few 
 - rounded all numbers in the float data type columns
 - added a new column called day_of_week
 
-### 4. Analysis and Visualizations (Analyze & Share)
+### 4. Exploratory Analysis (Analyze)
 
 After the data was cleaned, I imported it into Tableau for further analysis using visual aids.
 
@@ -132,7 +132,12 @@ Activity type progressing overa  span of two months from Fairly Active Minutes t
 
 - April 2016 has the highest logged minutes in all three categories.
 - March 2016 had the lowest logged minutes for all categories.
+
+### 5. Visualizations
+
+<img width="1440" height="820" alt="Screen Shot 2026-01-10 at 3 25 06 PM" src="https://github.com/user-attachments/assets/988609a2-4abe-4845-87f2-6cfd752d974f" />
 ***WORK IN PROGRESS***
+
 
 
 
