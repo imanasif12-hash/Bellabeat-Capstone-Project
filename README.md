@@ -50,7 +50,7 @@ b. **Tableau** - for data visualization.
 
 ### 3. Data Cleaning and Transformation (Process)
 
-I merged, cleaned and tranformed this dataset using SQL in the steps below:
+I merged, cleaned and transformed this dataset using SQL in the steps below:
 
 a. [Data merging](01_data_merging_daily_activity)
 
@@ -62,4 +62,78 @@ d. [Data analysis](04_data_analysis_daily_activity)
 
 #### Data Merging
 
+This dataset was a combination of the daily activity datasets, resulting in 1397 rows in total. The first one ranged from  March 12, 2016, to April 11, 2016, and the second one ranged from April 12, 2016, to May 12, 2016.
+
+The data dictionary below will give some additional context regarding the 13 variables in the dataset.
+
+| Variable          | Type    | Description                                 |
+|-------------------|---------|---------------------------------------------|
+| user_id           | Integer | Unique ID number for Fitbit users.          |
+| total_steps       | Integer | Total number of steps taken.                |
+| act_date          | Date    | Date in mm/dd/yyy format.                   |
+| total_distance    | Float   | Total kilometers tracked.                   |
+| very_act_dist     | Float   | Kilometres during very active activity.     |
+| moderate_act_dist | Float   | Kilometres during moderate activity.        |
+| light_act_dist    | Float   | Kilometres during light activity.           |
+| sed_act_dist      | Float   | Kilometres during sedentary activity.       |
+| very_act_min      | Integer | Total minutes in very active activity.      |
+| fairly_act_min    | Integer | Total minutes in fairly active activity.    |
+| lightly_act_min   | Integer | Total minutes in lightly active activity.   |
+| sed_min           | Integer | Total minutes in sedentary activity. |
+| total_calories    | Integer | Total calories lost.                        |
+
+
+#### Data Cleaning
+
+I [cleaned this dataset in SQL](03_data_cleaning_daily_activity) and made a few changes as stated below.
+- changed variable names from UserId to user_id and so on
+- rounded all numbers in the float data type columns
+- added a new column called day_of_week
+
+### 4. Analysis and Visualizations (Analyze & Share)
+
+After the data was cleaned, I imported it into Tableau for further analysis using visual aids.
+
+#### I) Daily Steps Taken
+
+This histogram shows the distribution of steps taken per day, indicating how frequently different step ranges happen.
+<img width="1483" height="878" alt="Screen Shot 2026-01-08 at 10 25 46 PM" src="https://github.com/user-attachments/assets/0833faef-46d4-44ee-b3c2-b3d3f18f52b3" />
+
+- This is a right-skewed histogram, which shows that more people walk between 5k-10k steps, being on the lower end of the graph
+
+#### II) Average Steps Taken on an Hourly Basis
+
+This line graph shows which hour of the day more steps were being taken.
+<img width="1483" height="878" alt="Screen Shot 2026-01-08 at 10 46 38 PM" src="https://github.com/user-attachments/assets/ba0f4997-2a23-4575-894a-a159b195a5b6" />
+
+- Users were getting the most steps at hour 18 (6:00 PM) with an average of 456.1 steps.
+- Second highest hour was hour 19 (7:00 PM) with an average of 442.2 steps.
+
+#### III) Relationship between Steps and Calories Burned
+
+This scatter plot graph shows the correlation between steps taken and calories burned.
+<img width="855" height="864" alt="Screen Shot 2026-01-08 at 10 53 35 PM" src="https://github.com/user-attachments/assets/e036493e-6182-4a10-9597-d8b24f711d06" />
+
+- Positive correlation.
+- The more steps all users took, the more calories they burned.
+
+#### IV) Calories Burned during the Week
+
+This heatmap shows the most to least calories lost in the week.
+<img width="1482" height="864" alt="Screen Shot 2026-01-08 at 11 00 36 PM" src="https://github.com/user-attachments/assets/99657192-4ce5-4c77-91ff-3520cc6cc614" />
+
+- Users lost the most calories on Tuesdays, the second highest being Saturday.
+- Users lost the fewest calories on Sunday.
+
+#### V) Activity Type Progression in Two Months
+
+Activity type progressing overa  span of two months from Fairly Active Minutes to Very Active Minutes.
+<img width="870" height="876" alt="Screen Shot 2026-01-08 at 11 03 18 PM" src="https://github.com/user-attachments/assets/d7f96538-485d-49f6-9172-b1d00ee3e470" />
+
+- April 2016 has the highest logged minutes in all three categories.
+- March 2016 had the lowest logged minutes for all categories.
 ***WORK IN PROGRESS***
+
+
+
+
