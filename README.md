@@ -128,7 +128,7 @@ This heatmap shows the most to least calories lost in the week.
 #### V) Activity Type Progression in Two Months
 
 Activity type progressing over a span of two months from Fairly Active Minutes to Very Active Minutes.
-<img width="870" height="876" alt="Screen Shot 2026-01-08 at 11 03 18 PM" src="https://github.com/user-attachments/assets/d7f96538-485d-49f6-9172-b1d00ee3e470" />
+<img width="831" height="866" alt="Screen Shot 2026-01-12 at 10 28 18 PM" src="https://github.com/user-attachments/assets/1e61ac14-7044-484f-80f1-bcb66e58e82e" />
 
 - April 2016 has the highest logged minutes in all three categories.
 - March 2016 had the lowest logged minutes for all categories.
@@ -141,19 +141,16 @@ Activity type progressing over a span of two months from Fairly Active Minutes t
 ### 6. Final Recommendations (Act)
 
 **Timed Engagement**
-- Send out alerts and reminders during peak times and days to encourage higher step counts. This will encourage consistent movement and engagement with the Bellabeat Leaf product.  
+- Alerts and reminders should be present for both low and high engagement periods. For low-engagement periods, there should be gentle reminders, whereas for high-engagement periods, alerts should be insight-based to encourage users to engage more with the steps feature. This will encourage consistent movement and long-term engagement with the Bellabeat Leaf product.  
 
 **Seasonal Campaigns**
 - When observing the visuals, there was more engagement with the Fitbit watch from April to May. Bellabeat could focus on creating seasonal campaigns during the spring with special deals for in-app purchases and a discount on the Leaf product.
 
 **Social Media Engagement**
-- Social media is an integral part of how individuals consume media. Using Bellabeats' current social media pages, there should be constant engagement with short-form videos about how people incorporate the Leaf into their everyday lives, and the benefits it offers could resonate with users, encouraging higher engagement. 
+- Social media is an integral part of how individuals consume media. Using Bellabeats' current social media pages, there should be constant engagement using short-form videos about how people incorporate the Leaf into their everyday lives. The benefits it offers in everyday life use could resonate with users, encouraging higher engagement. 
 
 **Personalization Features**
-- When looking at the activity levels feature, we can use this to tailor insights for users based on activity changes and adjust recommendations based on activity levels. This would be more encouraging for users since it is personal to them.
-
-**Long-Term Engagement**
-- Utilize user patterns and create reminders when activity seems lower to prevent the user from disengaging from the Bellabeat product. This can encourage more sustainable use of the Leaf product. 
+- When looking at the activity levels feature, we can use this to tailor insights for users based on activity changes and adjust recommendations based on activity levels. This would be more encouraging for users since these insights would be personal to them.
 
 
 
